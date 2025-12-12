@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis, BarChart, Bar, Legend } from "recharts";
 import { Server, Globe, Cpu, Activity, Users, Shield, Zap, Code, Terminal } from "lucide-react";
@@ -45,12 +46,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#services" className="hover:text-primary transition-colors">บริการ</a>
-            <a href="#stats" className="hover:text-primary transition-colors">สถิติ</a>
-            <Link href="/gallery" className="hover:text-primary transition-colors">ผลงาน</Link>
+            <a href="#services" className="hover:text-primary transition-colors">SERVICE</a>
+            <a href="#stats" className="hover:text-primary transition-colors">STATUS</a>
+            <Link href="/gallery" className="hover:text-primary transition-colors">ABOUT</Link>
             <Link href="/contact">
               <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary">
-                ติดต่อเรา
+                CONTACT US
               </Button>
             </Link>
           </div>
@@ -62,24 +63,24 @@ export default function Home() {
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10"></div>
-            <img 
-              src="/images/cover.png" 
-              alt="Rtc Entertainment Cover" 
+            <img
+              src="/images/cover.png"
+              alt="Rtc Entertainment Cover"
               className="w-full h-full object-cover opacity-40 scale-105 animate-pulse-slow"
             />
           </div>
-          
+
           <div className="container mx-auto px-4 relative z-20 text-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <Badge variant="outline" className="mb-4 border-primary/50 text-primary bg-primary/5 backdrop-blur-sm px-4 py-1 text-xs tracking-[0.2em]">
-                ระบบออนไลน์
+                SYSTEM ONLINE
               </Badge>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary drop-shadow-[0_0_30px_rgba(0,243,255,0.3)]">
-                เซิฟเวอร์<br />เจนเนอเรชั่นถัดไป
+                RTC<br />ENTERTAINMENT
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
                 เซิฟเวอร์ FiveM พรีเมียม เว็บไซต์ประสิทธิภาพสูง และการพัฒนาระบบแบบกำหนดเอง
@@ -87,12 +88,12 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,243,255,0.4)] border-none text-lg px-8">
-                    <Zap className="mr-2 h-5 w-5" /> เริ่มโครงการ
+                    <Zap className="mr-2 h-5 w-5" /> START PROJECT
                   </Button>
                 </Link>
                 <Link href="/gallery">
                   <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 hover:border-primary text-lg px-8">
-                    ดูผลงาน
+                    VIEW PROTFOLIO
                   </Button>
                 </Link>
               </div>
@@ -104,7 +105,7 @@ export default function Home() {
         <section id="services" className="py-24 bg-background/50 relative">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">บริการหลัก</h2>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">CORE SERVICES</h2>
               <div className="h-1 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
             </div>
 
@@ -161,116 +162,204 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Interactive Data Section */}
+        {/* Why Choose Us Section */}
         <section id="stats" className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5 skew-y-3 transform origin-top-left scale-110"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-              <div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">เมตริกสด</h2>
-                <p className="text-muted-foreground max-w-xl">
-                  สำรวจข้อมูลประสิทธิภาพแบบเรียลไทม์จากโครงสร้างพื้นฐานที่จัดการของเรา 
-                  ทำความเข้าใจเทรนด์ในกิจกรรมของผู้เล่นและโหลดระบบ
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="border-primary/30">
-                  <Activity className="w-4 h-4 mr-2" /> มุมมองสด
-                </Button>
-                <Button variant="outline" size="sm" className="border-primary/30">
-                  ส่งออกรายงาน
-                </Button>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">WHY CHOOSE US</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                เหตุผลที่คุณควรเลือกใช้บริการของเรา เราให้มากกว่าแค่บริการ แต่เป็นพาร์ทเนอร์ที่คุณไว้วางใจได้
+              </p>
+              <div className="h-1 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-4"></div>
             </div>
 
-            <Tabs defaultValue="traffic" className="w-full">
-              <TabsList className="bg-background/50 border border-border mb-8">
-                <TabsTrigger value="traffic">การวิเคราะห์การจราจร</TabsTrigger>
-                <TabsTrigger value="performance">สุขภาพระบบ</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="traffic" className="space-y-4">
-                <Card className="bg-black/40 border-primary/20 backdrop-blur-md">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Users className="w-5 h-5 text-primary" />
-                      กิจกรรมผู้เล่นและโหลดเซิฟเวอร์
-                    </CardTitle>
-                    <CardDescription>การวิเคราะห์เทรนด์ 24 ชั่วโมงแสดงเวลาการใช้งานสูงสุด</CardDescription>
-                  </CardHeader>
-                  <CardContent className="h-[400px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <AreaChart data={serverData}>
-                        <defs>
-                          <linearGradient id="colorPlayers" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="var(--color-primary)" stopOpacity={0.3}/>
-                            <stop offset="95%" stopColor="var(--color-primary)" stopOpacity={0}/>
-                          </linearGradient>
-                          <linearGradient id="colorLoad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="var(--color-secondary)" stopOpacity={0.3}/>
-                            <stop offset="95%" stopColor="var(--color-secondary)" stopOpacity={0}/>
-                          </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
-                        <XAxis dataKey="time" stroke="#666" />
-                        <YAxis stroke="#666" />
-                        <Tooltip 
-                          contentStyle={{ backgroundColor: '#000', border: '1px solid #333', borderRadius: '8px' }}
-                          itemStyle={{ color: '#fff' }}
-                        />
-                        <Legend />
-                        <Area 
-                          type="monotone" 
-                          dataKey="players" 
-                          stroke="var(--color-primary)" 
-                          fillOpacity={1} 
-                          fill="url(#colorPlayers)" 
-                          strokeWidth={2}
-                          name="ผู้เล่น"
-                        />
-                        <Area 
-                          type="monotone" 
-                          dataKey="load" 
-                          stroke="var(--color-secondary)" 
-                          fillOpacity={1} 
-                          fill="url(#colorLoad)" 
-                          strokeWidth={2}
-                          name="โหลด"
-                        />
-                      </AreaChart>
-                    </ResponsiveContainer>
-                  </CardContent>
-                </Card>
-              </TabsContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "ความปลอดภัยสูงสุด",
+                  desc: "ระบบป้องกัน DDoS และการเข้ารหัสข้อมูลระดับสูง รับประกันความปลอดภัยของข้อมูลและเซิฟเวอร์",
+                  color: "from-blue-500/20 to-cyan-500/20 border-blue-500/30"
+                },
+                {
+                  icon: <Zap className="w-8 h-8" />,
+                  title: "ประสิทธิภาพสูง",
+                  desc: "เซิฟเวอร์ที่เร็วและเสถียร ด้วยเทคโนโลยีล่าสุด รองรับผู้เล่นได้มากถึง 1000+ คนพร้อมกัน",
+                  color: "from-yellow-500/20 to-orange-500/20 border-yellow-500/30"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "ทีมซัพพอร์ต 24/7",
+                  desc: "ทีมงานมืออาชีพพร้อมให้บริการตลอด 24 ชั่วโมง ตอบกลับรวดเร็วภายใน 5 นาที",
+                  color: "from-green-500/20 to-emerald-500/20 border-green-500/30"
+                },
+                {
+                  icon: <Code className="w-8 h-8" />,
+                  title: "Custom Development",
+                  desc: "พัฒนาระบบและสคริปต์ตามความต้องการ ด้วยทีมนักพัฒนาที่มีประสบการณ์มากกว่า 3 ปี",
+                  color: "from-purple-500/20 to-pink-500/20 border-purple-500/30"
+                },
+                {
+                  icon: <Activity className="w-8 h-8" />,
+                  title: "Uptime 99.9%",
+                  desc: "รับประกันเวลาทำงานของระบบ 99.9% พร้อมระบบ Backup อัตโนมัติทุกวัน",
+                  color: "from-red-500/20 to-rose-500/20 border-red-500/30"
+                },
+                {
+                  icon: <Cpu className="w-8 h-8" />,
+                  title: "เทคโนโลยีทันสมัย",
+                  desc: "ใช้เทคโนโลยีล่าสุด React, Node.js, และ Cloud Infrastructure สำหรับประสิทธิภาพสูงสุด",
+                  color: "from-indigo-500/20 to-blue-500/20 border-indigo-500/30"
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className={`bg-gradient-to-br ${feature.color} backdrop-blur-sm hover:scale-105 transition-all duration-300 h-full group`}>
+                    <CardContent className="p-6">
+                      <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                        <div className="text-primary">
+                          {feature.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {feature.desc}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <TabsContent value="performance">
-                <Card className="bg-black/40 border-primary/20 backdrop-blur-md">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-secondary" />
-                      ความเชื่อถือได้ของโครงสร้างพื้นฐาน
-                    </CardTitle>
-                    <CardDescription>เวลาทำงานและความเร็วการตอบสนองทั่วบริการที่จัดการทั้งหมด</CardDescription>
-                  </CardHeader>
-                  <CardContent className="h-[400px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={performanceData} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" horizontal={false} />
-                        <XAxis type="number" domain={[0, 100]} stroke="#666" />
-                        <YAxis dataKey="name" type="category" stroke="#fff" width={50} />
-                        <Tooltip 
-                          cursor={{fill: 'rgba(255,255,255,0.05)'}}
-                          contentStyle={{ backgroundColor: '#000', border: '1px solid #333', borderRadius: '8px' }}
+        {/* Developer Section */}
+        <section className="py-24 relative overflow-hidden bg-gradient-to-b from-background to-black/50">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,243,255,0.1)_0%,transparent_70%)]"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">MEET THE DEVELOPER</h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="max-w-5xl mx-auto"
+            >
+              <Card className="bg-gradient-to-br from-card/80 to-black/60 border-primary/30 backdrop-blur-xl hover:border-primary/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,243,255,0.25)] overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none"></div>
+                <CardContent className="p-8 md:p-12 relative">
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    {/* Developer Image */}
+                    <motion.div
+                      className="relative group"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity animate-pulse"></div>
+                      <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl">
+                        <img
+                          src="/images/developer.jpg"
+                          alt="Rotjanasak Poemtoem - Developer"
+                          className="w-full h-full object-cover"
                         />
-                        <Legend />
-                        <Bar dataKey="uptime" name="Uptime %" fill="var(--color-primary)" radius={[0, 4, 4, 0]} barSize={20} />
-                        <Bar dataKey="speed" name="คะแนนความเร็ว" fill="var(--color-secondary)" radius={[0, 4, 4, 0]} barSize={20} />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+                      </div>
+                      <div className="absolute -bottom-2 -right-2 bg-primary text-black rounded-full p-3 shadow-lg">
+                        <Code className="w-6 h-6" />
+                      </div>
+                    </motion.div>
+
+                    {/* Developer Info */}
+                    <div className="flex-1 text-center md:text-left">
+                      <div className="mb-4">
+                        <Badge variant="outline" className="border-primary/50 text-primary bg-primary/10 backdrop-blur-sm px-3 py-1 text-xs mb-3">
+                          Lead Developer
+                        </Badge>
+                        <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-tight">
+                          Rotjanasak Poemtoem
+                        </h3>
+                        <p className="text-primary text-lg font-medium mb-4">Full Stack Developer & System Architect</p>
+                      </div>
+
+                      <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl">
+                        ผู้เชี่ยวชาญด้านการพัฒนาเว็บไซต์และระบบ FiveM มีประสบการณ์ในการสร้างโซลูชันที่ทันสมัย
+                        มุ่งมั่นในการส่งมอบผลงานคุณภาพสูงและประสบการณ์ผู้ใช้ที่ยอดเยี่ยม
+                      </p>
+
+                      {/* Programming Skills */}
+                      <div className="mb-6">
+                        <p className="text-sm text-muted-foreground mb-3 font-medium">ความเชี่ยวชาญด้านภาษาโปรแกรม:</p>
+                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                          {[
+                            { name: "Python", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+                            { name: "JavaScript", color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
+                            { name: "Lua", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
+                            { name: "HTML", color: "bg-orange-500/20 text-orange-400 border-orange-500/30" },
+                            { name: "CSS", color: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
+                            { name: "PHP", color: "bg-indigo-500/20 text-indigo-400 border-indigo-500/30" },
+                            { name: "SQL", color: "bg-green-500/20 text-green-400 border-green-500/30" }
+                          ].map((lang, i) => (
+                            <Badge key={i} variant="outline" className={`${lang.color} hover:scale-110 transition-transform cursor-default px-3 py-1`}>
+                              {lang.name}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                        <Link href="/contact">
+                          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,243,255,0.3)] w-full sm:w-auto">
+                            <Zap className="mr-2 h-4 w-4" />
+                            ติดต่อนักพัฒนา
+                          </Button>
+                        </Link>
+                        <a href="https://www.facebook.com/profile.php?id=100083410325446" target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" className="border-primary/30 hover:bg-primary/10 hover:border-primary w-full sm:w-auto">
+                            <Users className="mr-2 h-4 w-4" />
+                            Facebook
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-primary/20">
+                    {[
+                      { label: "โครงการสำเร็จ", value: "10+", icon: <Zap className="w-5 h-5" /> },
+                      { label: "ลูกค้าพึงพอใจ", value: "100%", icon: <Users className="w-5 h-5" /> },
+                      { label: "ประสบการณ์", value: "3 ปี", icon: <Code className="w-5 h-5" /> }
+                    ].map((stat, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        viewport={{ once: true }}
+                        className="text-center p-4 rounded-lg bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all group"
+                      >
+                        <div className="flex justify-center mb-2 text-primary group-hover:scale-110 transition-transform">
+                          {stat.icon}
+                        </div>
+                        <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+                        <div className="text-xs text-muted-foreground">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </section>
 
