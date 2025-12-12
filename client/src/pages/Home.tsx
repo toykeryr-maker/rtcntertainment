@@ -7,6 +7,7 @@ import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YA
 import { Server, Globe, Cpu, Activity, Users, Shield, Zap, Code, Terminal } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const serverData = [
   { time: "00:00", players: 120, load: 45 },
@@ -28,6 +29,9 @@ const performanceData = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+      {/* Animated Background Effect */}
+      <AnimatedBackground />
+
       {/* Background Grid Effect */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>

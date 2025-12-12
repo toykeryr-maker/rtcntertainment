@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast.error("กรุณากรอกข้อมูลให้ครบถ้วน");
       return;
@@ -40,11 +41,11 @@ export default function Contact() {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       // Simulate form submission (in real app, this would send to backend)
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       toast.success("ส่งข้อความสำเร็จ! เราจะติดต่อคุณในเร็วๆ นี้");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -56,6 +57,9 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
+      {/* Animated Background Effect */}
+      <AnimatedBackground />
+
       {/* Background Grid Effect */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -71,10 +75,10 @@ export default function Contact() {
             </span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="/#services" className="hover:text-primary transition-colors">บริการ</a>
-            <a href="/#stats" className="hover:text-primary transition-colors">สถิติ</a>
-            <a href="/gallery" className="hover:text-primary transition-colors">ผลงาน</a>
-            <a href="/contact" className="text-primary">ติดต่อเรา</a>
+            <a href="/#services" className="hover:text-primary transition-colors">SERVICE</a>
+            <a href="/#stats" className="hover:text-primary transition-colors">STATUS</a>
+            <a href="/gallery" className="hover:text-primary transition-colors">ABOUT</a>
+            <a href="/contact" className="text-primary">CONTACT US</a>
           </div>
         </div>
       </nav>
@@ -141,9 +145,9 @@ export default function Contact() {
                     <p className="text-muted-foreground">
                       ติดต่อเราผ่าน Facebook
                     </p>
-                    <a 
-                      href="https://www.facebook.com/profile.php?id=100083410325446" 
-                      target="_blank" 
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100083410325446"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary font-semibold mt-2 hover:underline block"
                     >
