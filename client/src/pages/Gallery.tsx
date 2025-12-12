@@ -57,11 +57,11 @@ export default function Gallery() {
             </span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="/#services" className="hover:text-primary transition-colors">บริการ</a>
-            <a href="/#stats" className="hover:text-primary transition-colors">สถิติ</a>
-            <a href="/gallery" className="text-primary">ผลงาน</a>
+            <a href="/#services" className="hover:text-primary transition-colors">SERVICE</a>
+            <a href="/#stats" className="hover:text-primary transition-colors">STATUS</a>
+            <a href="/gallery" className="text-primary">ABOUT</a>
             <a href="/contact" className="hover:text-primary transition-colors">
-              ติดต่อเรา
+              CONTACT US
             </a>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Gallery() {
               transition={{ duration: 0.8 }}
             >
               <Badge variant="outline" className="mb-4 border-primary/50 text-primary bg-primary/5 backdrop-blur-sm px-4 py-1 text-xs tracking-[0.2em]">
-                แกลเลอรี่ผลงาน
+                PORTFOLIO
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary">
                 ผลงานของเรา
